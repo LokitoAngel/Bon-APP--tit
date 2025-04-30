@@ -20,6 +20,27 @@ class _HomePageState extends State<HomePage> {
     return List<Map<String, dynamic>>.from(jsonResult['recetas']);
   }
 
+  void onItemTapped(int index) {
+    setState(() => selectedIndex = index);
+    switch (index) {
+      case 0:
+        Navigator.pushReplacementNamed(context, 'home_page');
+        break;
+      case 1:
+        Navigator.pushNamed(context, 'recipes');
+        break;
+      case 2:
+        Navigator.pushNamed(context, 'add');
+        break;
+      case 3:
+        Navigator.pushNamed(context, 'list');
+        break;
+      case 4:
+        Navigator.pushNamed(context, 'user');
+        break;
+    }
+  }
+
   @override
   Widget build(BuildContext context) {
     final theme = Theme.of(context);
@@ -36,12 +57,12 @@ class _HomePageState extends State<HomePage> {
       backgroundColor: fondo,
       appBar: AppBar(
         backgroundColor: primario,
-        title: const Text('Recetas'),
+        title: const Text('Recipes'),
         centerTitle: true,
         actions: [
           IconButton(
             icon: Icon(isDark ? Icons.light_mode : Icons.dark_mode),
-            tooltip: 'Cambiar tema',
+            tooltip: 'Toggle Theme',
             onPressed: () {
               themeProvider.toggleTheme(!isDark);
             },
@@ -58,7 +79,7 @@ class _HomePageState extends State<HomePage> {
           if (!snapshot.hasData || snapshot.data!.isEmpty) {
             return Center(
               child: Text(
-                'No hay recetas disponibles',
+                'No recipes available',
                 style: TextStyle(color: texto),
               ),
             );
@@ -100,7 +121,7 @@ class _HomePageState extends State<HomePage> {
                           ),
                         ),
                         Text(
-                          "Ver más",
+                          "View more",
                           style: TextStyle(
                             color: acento,
                             fontSize: 14,
@@ -195,23 +216,19 @@ class _HomePageState extends State<HomePage> {
         selectedItemColor: primario,
         unselectedItemColor: texto.withOpacity(0.6),
         type: BottomNavigationBarType.fixed,
-        onTap: (index) {
-          setState(() {
-            selectedIndex = index;
-          });
-        },
+        onTap: onItemTapped,
         items: const [
-          BottomNavigationBarItem(icon: Icon(Icons.home), label: 'Inicio'),
-          BottomNavigationBarItem(icon: Icon(Icons.book), label: 'Recetas'),
+          BottomNavigationBarItem(icon: Icon(Icons.home), label: 'Home'),
+          BottomNavigationBarItem(icon: Icon(Icons.book), label: 'Recipes'),
           BottomNavigationBarItem(
             icon: Icon(Icons.add_circle, size: 32),
             label: '',
           ),
           BottomNavigationBarItem(
             icon: Icon(Icons.shopping_cart),
-            label: 'Lista',
+            label: 'List',
           ),
-          BottomNavigationBarItem(icon: Icon(Icons.person), label: 'Perfil'),
+          BottomNavigationBarItem(icon: Icon(Icons.person), label: 'User'),
         ],
       ),
     );
