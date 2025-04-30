@@ -1,0 +1,45 @@
+import 'package:flutter/material.dart';
+
+class AppColors {
+  // Light Theme
+  static const Color lightBackground = Color(0xFFEDD4B2);
+  static const Color lightCard = Color(0xFFFFF5E0);
+  static const Color lightText = Color(0xFF3D2C1F);
+  static const Color lightAccent = Color(0xFF00C9B1);
+  static const Color lightAction = Color(0xFFFF6B35);
+
+  // Dark Theme
+  static const Color darkBackground = Color(0xFF1A1A1A);
+  static const Color darkCard = Color(0xFF2D232E);
+  static const Color darkText = Color(0xFFE0E0E0);
+  static const Color darkAccent = Color(0xFF00C9B1);
+  static const Color darkAction = Color(0xFFFF6B35);
+}
+
+ThemeData lightTheme = ThemeData(
+  brightness: Brightness.light,
+  scaffoldBackgroundColor: AppColors.lightBackground,
+  appBarTheme: const AppBarTheme(
+    backgroundColor: AppColors.lightAction,
+    foregroundColor: Colors.white,
+  ),
+  textTheme: const TextTheme(bodyMedium: TextStyle(color: AppColors.lightText)),
+  colorScheme: const ColorScheme.light(
+    primary: AppColors.lightAction,
+    secondary: AppColors.lightAccent,
+  ),
+);
+
+ThemeData darkTheme = ThemeData(
+  brightness: Brightness.dark,
+  scaffoldBackgroundColor: AppColors.darkBackground,
+  appBarTheme: const AppBarTheme(
+    backgroundColor: AppColors.darkCard,
+    foregroundColor: Colors.white,
+  ),
+  textTheme: const TextTheme(bodyMedium: TextStyle(color: AppColors.darkText)),
+  colorScheme: const ColorScheme.dark(
+    primary: AppColors.darkAction,
+    secondary: AppColors.darkAccent,
+  ),
+);

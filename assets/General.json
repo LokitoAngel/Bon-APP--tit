@@ -1,0 +1,184 @@
+{
+    "recetas": [
+      {
+        "nombre": "Tostadas de aguacate",
+        "imagen": "https://www.comedera.com/wp-content/uploads/2022/10/tostadas-de-atun-y-aguacate-500x500.jpeg",
+        "ingredientes": [
+          "2 rebanadas de pan integral",
+          "1 aguacate maduro",
+          "1 huevo",
+          "Sal y pimienta al gusto"
+        ],
+        "pasos": [
+          "Tostar el pan",
+          "Machacar el aguacate y esparcir en las tostadas",
+          "Freír el huevo y colocar encima",
+          "Sazonar con sal y pimienta"
+        ],
+        "categoria": ["Desayuno", "Vegana"],
+        "autor": "María Gómez",
+        "tiempoPreparacion": 10
+      },
+      {
+        "nombre": "Ensalada de garbanzos",
+        "imagen": "https://unareceta.com/wp-content/uploads/2016/08/receta-ensalada-de-garbanzos-con-vinagreta-de-naranja.jpg",
+        "ingredientes": [
+          "1 lata de garbanzos",
+          "1 pepino",
+          "1 tomate",
+          "Aceite de oliva",
+          "Limón"
+        ],
+        "pasos": [
+          "Escurrir y lavar los garbanzos",
+          "Picar el pepino y tomate en cubos",
+          "Mezclar todos los ingredientes",
+          "Aliñar con aceite y limón"
+        ],
+        "categoria": ["Vegana", "Plato fuerte"],
+        "autor": "Anónimo",
+        "tiempoPreparacion": 15
+      },
+      {
+        "nombre": "Pollo al limón",
+        "imagen": "https://www.petitchef.es/imgupl/recipe/pollo-al-limon-chino--66506p87154.jpg",
+        "ingredientes": [
+          "2 pechugas de pollo",
+          "2 limones",
+          "Ajo en polvo",
+          "Mantequilla"
+        ],
+        "pasos": [
+          "Dorar el pollo en sartén con mantequilla",
+          "Agregar jugo de limón y ajo",
+          "Cocinar a fuego bajo 15 minutos"
+        ],
+        "categoria": ["Carne", "Plato fuerte"],
+        "autor": "Chef Carlos",
+        "tiempoPreparacion": 25
+      },
+      {
+        "nombre": "Avena durante la noche",
+        "imagen": "https://www.lavidalucida.com/wp-content/uploads/2014/10/531966_10151172382587293_176783550_n.jpg",
+        "ingredientes": [
+          "1/2 taza de avena",
+          "1 taza de leche",
+          "Frutos secos",
+          "Miel"
+        ],
+        "pasos": [
+          "Mezclar avena con leche en un frasco",
+          "Refrigerar toda la noche",
+          "Agregar frutos secos y miel al servir"
+        ],
+        "categoria": ["Desayuno", "Postre"],
+        "autor": "Ana Rodríguez",
+        "tiempoPreparacion": 5
+      },
+      {
+        "nombre": "Huevos revueltos con vegetales",
+        "imagen": "https://thumbs.dreamstime.com/b/huevos-revueltos-con-el-jam%C3%B3n-y-las-verduras-34011852.jpg",
+        "ingredientes": [
+          "3 huevos",
+          "1/2 pimiento",
+          "1/4 cebolla",
+          "Aceite"
+        ],
+        "pasos": [
+          "Picar vegetales y sofreír",
+          "Batir huevos y agregar a la sartén",
+          "Revolver hasta cuajar"
+        ],
+        "categoria": ["Desayuno", "Plato fuerte"],
+        "autor": "Juan Pérez",
+        "tiempoPreparacion": 15
+      },
+      {
+        "nombre": "Pasta al pesto",
+        "imagen": "https://www.ricettealvolo.it/wp-content/uploads/2016/10/spaghetti-al-pesto.jpg",
+        "ingredientes": [
+          "200g pasta",
+          "3 cucharadas pesto",
+          "Queso parmesano"
+        ],
+        "pasos": [
+          "Cocinar la pasta según instrucciones",
+          "Mezclar con pesto",
+          "Espolvorear queso"
+        ],
+        "categoria": ["Vegana", "Plato fuerte"],
+        "autor": "Luisa Fernanda",
+        "tiempoPreparacion": 15
+      },
+      {
+        "nombre": "Smoothie de frutas",
+        "imagen": "https://thekitchencommunity.org/wp-content/uploads/2022/02/fruit-smoothie-recipes-1.jpg",
+        "ingredientes": [
+          "1 plátano",
+          "1/2 taza de fresas",
+          "1 taza de leche",
+          "Miel"
+        ],
+        "pasos": [
+          "Colocar todos los ingredientes en licuadora",
+          "Licuar hasta suavizar",
+          "Servir frío"
+        ],
+        "categoria": ["Desayuno", "Postre"],
+        "autor": "Anónimo",
+        "tiempoPreparacion": 5
+      },
+      {
+        "nombre": "Ensalada César",
+        "imagen": "https://www.recetasdesbieta.com/wp-content/uploads/2015/06/ensalada-cesar-2.jpg",
+        "ingredientes": [
+          "Lechuga romana",
+          "Crutones",
+          "Salsa César",
+          "Queso parmesano"
+        ],
+        "pasos": [
+          "Lavar y cortar la lechuga",
+          "Mezclar con crutones",
+          "Agregar salsa y queso"
+        ],
+        "categoria": ["Plato fuerte", "Vegana"],
+        "autor": "Chef Sofía",
+        "tiempoPreparacion": 10
+      },
+      {
+        "nombre": "Hot cakes de plátano",
+        "imagen": "https://assets.unileversolutions.com/recipes-v2/236529.jpg",
+        "ingredientes": [
+          "1 plátano maduro",
+          "2 huevos",
+          "1 cucharada de harina"
+        ],
+        "pasos": [
+          "Machacar el plátano",
+          "Mezclar con huevos y harina",
+          "Cocinar en sartén a fuego medio"
+        ],
+        "categoria": ["Desayuno", "Postre"],
+        "autor": "Pedro Martínez",
+        "tiempoPreparacion": 20
+      },
+      {
+        "nombre": "Ensalada de atún",
+        "imagen": "https://img-global.cpcdn.com/recipes/8f0da48639546555/1502x1064cq70/ensalada-de-atun-con-elote-foto-principal.jpg",
+        "ingredientes": [
+          "1 lata de atún",
+          "1 tomate",
+          "1/4 cebolla",
+          "Mayonesa"
+        ],
+        "pasos": [
+          "Mezclar todos los ingredientes",
+          "Servir sobre lechuga"
+        ],
+        "categoria": ["Plato fuerte", "Carne"],
+        "autor": "Chef Carlos",
+        "tiempoPreparacion": 10
+      }
+    ]
+  }
