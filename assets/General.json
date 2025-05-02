@@ -1,184 +1,184 @@
 {
-    "recetas": [
-      {
-        "nombre": "Tostadas de aguacate",
-        "imagen": "https://www.comedera.com/wp-content/uploads/2022/10/tostadas-de-atun-y-aguacate-500x500.jpeg",
-        "ingredientes": [
-          "2 rebanadas de pan integral",
-          "1 aguacate maduro",
-          "1 huevo",
-          "Sal y pimienta al gusto"
-        ],
-        "pasos": [
-          "Tostar el pan",
-          "Machacar el aguacate y esparcir en las tostadas",
-          "Freír el huevo y colocar encima",
-          "Sazonar con sal y pimienta"
-        ],
-        "categoria": ["Desayuno", "Vegana"],
-        "autor": "María Gómez",
-        "tiempoPreparacion": 10
-      },
-      {
-        "nombre": "Ensalada de garbanzos",
-        "imagen": "https://unareceta.com/wp-content/uploads/2016/08/receta-ensalada-de-garbanzos-con-vinagreta-de-naranja.jpg",
-        "ingredientes": [
-          "1 lata de garbanzos",
-          "1 pepino",
-          "1 tomate",
-          "Aceite de oliva",
-          "Limón"
-        ],
-        "pasos": [
-          "Escurrir y lavar los garbanzos",
-          "Picar el pepino y tomate en cubos",
-          "Mezclar todos los ingredientes",
-          "Aliñar con aceite y limón"
-        ],
-        "categoria": ["Vegana", "Plato fuerte"],
-        "autor": "Anónimo",
-        "tiempoPreparacion": 15
-      },
-      {
-        "nombre": "Pollo al limón",
-        "imagen": "https://www.petitchef.es/imgupl/recipe/pollo-al-limon-chino--66506p87154.jpg",
-        "ingredientes": [
-          "2 pechugas de pollo",
-          "2 limones",
-          "Ajo en polvo",
-          "Mantequilla"
-        ],
-        "pasos": [
-          "Dorar el pollo en sartén con mantequilla",
-          "Agregar jugo de limón y ajo",
-          "Cocinar a fuego bajo 15 minutos"
-        ],
-        "categoria": ["Carne", "Plato fuerte"],
-        "autor": "Chef Carlos",
-        "tiempoPreparacion": 25
-      },
-      {
-        "nombre": "Avena durante la noche",
-        "imagen": "https://www.lavidalucida.com/wp-content/uploads/2014/10/531966_10151172382587293_176783550_n.jpg",
-        "ingredientes": [
-          "1/2 taza de avena",
-          "1 taza de leche",
-          "Frutos secos",
-          "Miel"
-        ],
-        "pasos": [
-          "Mezclar avena con leche en un frasco",
-          "Refrigerar toda la noche",
-          "Agregar frutos secos y miel al servir"
-        ],
-        "categoria": ["Desayuno", "Postre"],
-        "autor": "Ana Rodríguez",
-        "tiempoPreparacion": 5
-      },
-      {
-        "nombre": "Huevos revueltos con vegetales",
-        "imagen": "https://thumbs.dreamstime.com/b/huevos-revueltos-con-el-jam%C3%B3n-y-las-verduras-34011852.jpg",
-        "ingredientes": [
-          "3 huevos",
-          "1/2 pimiento",
-          "1/4 cebolla",
-          "Aceite"
-        ],
-        "pasos": [
-          "Picar vegetales y sofreír",
-          "Batir huevos y agregar a la sartén",
-          "Revolver hasta cuajar"
-        ],
-        "categoria": ["Desayuno", "Plato fuerte"],
-        "autor": "Juan Pérez",
-        "tiempoPreparacion": 15
-      },
-      {
-        "nombre": "Pasta al pesto",
-        "imagen": "https://www.ricettealvolo.it/wp-content/uploads/2016/10/spaghetti-al-pesto.jpg",
-        "ingredientes": [
-          "200g pasta",
-          "3 cucharadas pesto",
-          "Queso parmesano"
-        ],
-        "pasos": [
-          "Cocinar la pasta según instrucciones",
-          "Mezclar con pesto",
-          "Espolvorear queso"
-        ],
-        "categoria": ["Vegana", "Plato fuerte"],
-        "autor": "Luisa Fernanda",
-        "tiempoPreparacion": 15
-      },
-      {
-        "nombre": "Smoothie de frutas",
-        "imagen": "https://thekitchencommunity.org/wp-content/uploads/2022/02/fruit-smoothie-recipes-1.jpg",
-        "ingredientes": [
-          "1 plátano",
-          "1/2 taza de fresas",
-          "1 taza de leche",
-          "Miel"
-        ],
-        "pasos": [
-          "Colocar todos los ingredientes en licuadora",
-          "Licuar hasta suavizar",
-          "Servir frío"
-        ],
-        "categoria": ["Desayuno", "Postre"],
-        "autor": "Anónimo",
-        "tiempoPreparacion": 5
-      },
-      {
-        "nombre": "Ensalada César",
-        "imagen": "https://www.recetasdesbieta.com/wp-content/uploads/2015/06/ensalada-cesar-2.jpg",
-        "ingredientes": [
-          "Lechuga romana",
-          "Crutones",
-          "Salsa César",
-          "Queso parmesano"
-        ],
-        "pasos": [
-          "Lavar y cortar la lechuga",
-          "Mezclar con crutones",
-          "Agregar salsa y queso"
-        ],
-        "categoria": ["Plato fuerte", "Vegana"],
-        "autor": "Chef Sofía",
-        "tiempoPreparacion": 10
-      },
-      {
-        "nombre": "Hot cakes de plátano",
-        "imagen": "https://assets.unileversolutions.com/recipes-v2/236529.jpg",
-        "ingredientes": [
-          "1 plátano maduro",
-          "2 huevos",
-          "1 cucharada de harina"
-        ],
-        "pasos": [
-          "Machacar el plátano",
-          "Mezclar con huevos y harina",
-          "Cocinar en sartén a fuego medio"
-        ],
-        "categoria": ["Desayuno", "Postre"],
-        "autor": "Pedro Martínez",
-        "tiempoPreparacion": 20
-      },
-      {
-        "nombre": "Ensalada de atún",
-        "imagen": "https://img-global.cpcdn.com/recipes/8f0da48639546555/1502x1064cq70/ensalada-de-atun-con-elote-foto-principal.jpg",
-        "ingredientes": [
-          "1 lata de atún",
-          "1 tomate",
-          "1/4 cebolla",
-          "Mayonesa"
-        ],
-        "pasos": [
-          "Mezclar todos los ingredientes",
-          "Servir sobre lechuga"
-        ],
-        "categoria": ["Plato fuerte", "Carne"],
-        "autor": "Chef Carlos",
-        "tiempoPreparacion": 10
-      }
-    ]
-  }
+  "recetas": [
+    {
+      "nombre": "Avocado Toast",
+      "imagen": "https://www.comedera.com/wp-content/uploads/2022/10/tostadas-de-atun-y-aguacate-500x500.jpeg",
+      "ingredientes": [
+        { "ingrediente": "slice of whole wheat bread", "cantidad": 2 },
+        { "ingrediente": "ripe avocado", "cantidad": 1 },
+        { "ingrediente": "egg", "cantidad": 1 },
+        { "ingrediente": "salt and pepper", "cantidad": 1 }
+      ],
+      "pasos": [
+        "Toast the bread",
+        "Mash the avocado and spread on the toast",
+        "Fry the egg and place it on top",
+        "Season with salt and pepper"
+      ],
+      "categoria": ["Breakfast", "Vegan"],
+      "autor": "Maria Gomez",
+      "tiempoPreparacion": 10
+    },
+    {
+      "nombre": "Chickpea Salad",
+      "imagen": "https://unareceta.com/wp-content/uploads/2016/08/receta-ensalada-de-garbanzos-con-vinagreta-de-naranja.jpg",
+      "ingredientes": [
+        { "ingrediente": "can of chickpeas", "cantidad": 1 },
+        { "ingrediente": "cucumber", "cantidad": 1 },
+        { "ingrediente": "tomato", "cantidad": 1 },
+        { "ingrediente": "olive oil", "cantidad": 1 },
+        { "ingrediente": "lemon", "cantidad": 1 }
+      ],
+      "pasos": [
+        "Drain and rinse the chickpeas",
+        "Dice the cucumber and tomato",
+        "Mix all ingredients",
+        "Dress with oil and lemon"
+      ],
+      "categoria": ["Vegan", "Main course"],
+      "autor": "Anonymous",
+      "tiempoPreparacion": 15
+    },
+    {
+      "nombre": "Lemon Chicken",
+      "imagen": "https://www.petitchef.es/imgupl/recipe/pollo-al-limon-chino--66506p87154.jpg",
+      "ingredientes": [
+        { "ingrediente": "chicken breast", "cantidad": 2 },
+        { "ingrediente": "lemon", "cantidad": 2 },
+        { "ingrediente": "garlic powder", "cantidad": 1 },
+        { "ingrediente": "butter", "cantidad": 1 }
+      ],
+      "pasos": [
+        "Sear chicken in a pan with butter",
+        "Add lemon juice and garlic",
+        "Cook over low heat for 15 minutes"
+      ],
+      "categoria": ["Meat", "Main course"],
+      "autor": "Chef Carlos",
+      "tiempoPreparacion": 25
+    },
+    {
+      "nombre": "Overnight Oats",
+      "imagen": "https://www.lavidalucida.com/wp-content/uploads/2014/10/531966_10151172382587293_176783550_n.jpg",
+      "ingredientes": [
+        { "ingrediente": "cup of oats", "cantidad": 0.5 },
+        { "ingrediente": "cup of milk", "cantidad": 1 },
+        { "ingrediente": "mixed nuts", "cantidad": 1 },
+        { "ingrediente": "honey", "cantidad": 1 }
+      ],
+      "pasos": [
+        "Mix oats with milk in a jar",
+        "Refrigerate overnight",
+        "Add nuts and honey before serving"
+      ],
+      "categoria": ["Breakfast", "Dessert"],
+      "autor": "Ana Rodriguez",
+      "tiempoPreparacion": 5
+    },
+    {
+      "nombre": "Scrambled Eggs with Vegetables",
+      "imagen": "https://thumbs.dreamstime.com/b/huevos-revueltos-con-el-jam%C3%B3n-y-las-verduras-34011852.jpg",
+      "ingredientes": [
+        { "ingrediente": "egg", "cantidad": 3 },
+        { "ingrediente": "bell pepper", "cantidad": 0.5 },
+        { "ingrediente": "onion", "cantidad": 0.25 },
+        { "ingrediente": "oil", "cantidad": 1 }
+      ],
+      "pasos": [
+        "Chop vegetables and sauté",
+        "Beat eggs and add to pan",
+        "Stir until cooked"
+      ],
+      "categoria": ["Breakfast", "Main course"],
+      "autor": "Juan Perez",
+      "tiempoPreparacion": 15
+    },
+    {
+      "nombre": "Pasta with Pesto",
+      "imagen": "https://www.ricettealvolo.it/wp-content/uploads/2016/10/spaghetti-al-pesto.jpg",
+      "ingredientes": [
+        { "ingrediente": "grams of pasta", "cantidad": 200 },
+        { "ingrediente": "tablespoon of pesto", "cantidad": 3 },
+        { "ingrediente": "parmesan cheese", "cantidad": 1 }
+      ],
+      "pasos": [
+        "Cook pasta as instructed",
+        "Mix with pesto",
+        "Sprinkle with cheese"
+      ],
+      "categoria": ["Vegan", "Main course"],
+      "autor": "Luisa Fernanda",
+      "tiempoPreparacion": 15
+    },
+    {
+      "nombre": "Fruit Smoothie",
+      "imagen": "https://thekitchencommunity.org/wp-content/uploads/2022/02/fruit-smoothie-recipes-1.jpg",
+      "ingredientes": [
+        { "ingrediente": "banana", "cantidad": 1 },
+        { "ingrediente": "cup of strawberries", "cantidad": 0.5 },
+        { "ingrediente": "cup of milk", "cantidad": 1 },
+        { "ingrediente": "honey", "cantidad": 1 }
+      ],
+      "pasos": [
+        "Put all ingredients in blender",
+        "Blend until smooth",
+        "Serve cold"
+      ],
+      "categoria": ["Breakfast", "Dessert"],
+      "autor": "Anonymous",
+      "tiempoPreparacion": 5
+    },
+    {
+      "nombre": "Caesar Salad",
+      "imagen": "https://www.recetasdesbieta.com/wp-content/uploads/2015/06/ensalada-cesar-2.jpg",
+      "ingredientes": [
+        { "ingrediente": "romaine lettuce", "cantidad": 1 },
+        { "ingrediente": "croutons", "cantidad": 1 },
+        { "ingrediente": "Caesar dressing", "cantidad": 1 },
+        { "ingrediente": "parmesan cheese", "cantidad": 1 }
+      ],
+      "pasos": [
+        "Wash and cut lettuce",
+        "Mix with croutons",
+        "Add dressing and cheese"
+      ],
+      "categoria": ["Main course", "Vegan"],
+      "autor": "Chef Sofia",
+      "tiempoPreparacion": 10
+    },
+    {
+      "nombre": "Banana Pancakes",
+      "imagen": "https://assets.unileversolutions.com/recipes-v2/236529.jpg",
+      "ingredientes": [
+        { "ingrediente": "ripe banana", "cantidad": 1 },
+        { "ingrediente": "egg", "cantidad": 2 },
+        { "ingrediente": "tablespoon of flour", "cantidad": 1 }
+      ],
+      "pasos": [
+        "Mash the banana",
+        "Mix with eggs and flour",
+        "Cook on medium heat"
+      ],
+      "categoria": ["Breakfast", "Dessert"],
+      "autor": "Pedro Martinez",
+      "tiempoPreparacion": 20
+    },
+    {
+      "nombre": "Tuna Salad",
+      "imagen": "https://img-global.cpcdn.com/recipes/8f0da48639546555/1502x1064cq70/ensalada-de-atun-con-elote-foto-principal.jpg",
+      "ingredientes": [
+        { "ingrediente": "can of tuna", "cantidad": 1 },
+        { "ingrediente": "tomato", "cantidad": 1 },
+        { "ingrediente": "onion", "cantidad": 0.25 },
+        { "ingrediente": "mayonnaise", "cantidad": 1 }
+      ],
+      "pasos": [
+        "Mix all ingredients",
+        "Serve over lettuce"
+      ],
+      "categoria": ["Main course", "Meat"],
+      "autor": "Chef Carlos",
+      "tiempoPreparacion": 10
+    }
+  ]
+}

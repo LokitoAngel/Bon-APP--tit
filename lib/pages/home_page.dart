@@ -60,6 +60,9 @@ class _HomePageState extends State<HomePage> {
         title: const Text('Recipes'),
         centerTitle: true,
         actions: [
+          IconButton(onPressed: () {
+            Navigator.pushNamed(context, 'search');
+          }, icon: Icon(Icons.search)),
           IconButton(
             icon: Icon(isDark ? Icons.light_mode : Icons.dark_mode),
             tooltip: 'Toggle Theme',

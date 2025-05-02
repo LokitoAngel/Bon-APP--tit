@@ -1,3 +1,4 @@
+import 'package:bonappetit/pages/search_main_page.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'pages/home_page.dart';
@@ -42,6 +43,7 @@ class MyApp extends StatelessWidget {
         'add': (context) => const AddRecipePage(),
         'lista': (context) => const ListPage(),
         'perfil': (context) => const UserPage(),
+        'search': (context) => const SearchMain(),
       },
     );
   }
