@@ -1,8 +1,10 @@
-import 'dart:convert';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:provider/provider.dart';
+import 'dart:convert';
 import '../theme/theme_provider.dart';
+import '../providers/favorites_provider.dart';
+import '../providers/list_provider.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({super.key});
@@ -27,16 +29,16 @@ class _HomePageState extends State<HomePage> {
         Navigator.pushReplacementNamed(context, 'home_page');
         break;
       case 1:
-        Navigator.pushNamed(context, 'recipes');
+        Navigator.pushReplacementNamed(context, 'favorite_page');
         break;
       case 2:
-        Navigator.pushNamed(context, 'add');
+        Navigator.pushReplacementNamed(context, 'add');
         break;
       case 3:
-        Navigator.pushNamed(context, 'list');
+        Navigator.pushReplacementNamed(context, 'lista');
         break;
       case 4:
-        Navigator.pushNamed(context, 'user');
+        Navigator.pushReplacementNamed(context, 'perfil');
         break;
     }
   }
@@ -45,8 +47,10 @@ class _HomePageState extends State<HomePage> {
   Widget build(BuildContext context) {
     final theme = Theme.of(context);
     final themeProvider = Provider.of<ThemeProvider>(context);
-    final isDark = themeProvider.isDarkMode;
+    final favoritesProvider = Provider.of<FavoritesProvider>(context);
+    final listProvider = Provider.of<ListProvider>(context);
 
+    final isDark = themeProvider.isDarkMode;
     final fondo = theme.scaffoldBackgroundColor;
     final texto = theme.textTheme.bodyMedium?.color ?? Colors.black;
     final tarjeta = theme.cardColor;
@@ -120,83 +124,283 @@ class _HomePageState extends State<HomePage> {
                             fontWeight: FontWeight.bold,
                           ),
                         ),
-                        Text(
-                          "View more",
-                          style: TextStyle(
-                            color: acento,
-                            fontSize: 14,
-                            fontWeight: FontWeight.w500,
+                        TextButton(
+                          onPressed: () {
+                            Navigator.pushNamed(
+                              context,
+                              'recipes_by_category',
+                              arguments: categoria,
+                            );
+                          },
+                          child: Text(
+                            "View more",
+                            style: TextStyle(
+                              color: acento,
+                              fontSize: 14,
+                              fontWeight: FontWeight.w500,
+                            ),
                           ),
                         ),
                       ],
                     ),
                   ),
                   SizedBox(
-                    height: 260,
+                    height: 310,
                     child: ListView.builder(
                       scrollDirection: Axis.horizontal,
                       itemCount: recetasCat.length,
                       itemBuilder: (context, i) {
                         final receta = recetasCat[i];
+                        final isFav = favoritesProvider.isFavorite(
+                          receta['nombre'],
+                        );
+                        final isInList = listProvider.recipes.any(
+                          (r) => r['nombre'] == receta['nombre'],
+                        );
+
                         return Padding(
                           padding: const EdgeInsets.all(8.0),
                           child: SizedBox(
                             width: 180,
-                            child: Card(
-                              color: tarjeta,
-                              shape: RoundedRectangleBorder(
-                                borderRadius: BorderRadius.circular(16),
-                              ),
-                              elevation: 4,
-                              child: Column(
-                                crossAxisAlignment: CrossAxisAlignment.start,
-                                children: [
-                                  ClipRRect(
-                                    borderRadius: const BorderRadius.vertical(
-                                      top: Radius.circular(16),
-                                    ),
-                                    child: Image.network(
-                                      receta['imagen'],
-                                      height: 120,
-                                      width: double.infinity,
-                                      fit: BoxFit.cover,
-                                    ),
-                                  ),
-                                  Padding(
-                                    padding: const EdgeInsets.all(8.0),
-                                    child: Text(
-                                      receta['nombre'],
-                                      style: TextStyle(
-                                        color: texto,
-                                        fontWeight: FontWeight.bold,
+                            child: GestureDetector(
+                              onTap: () {
+                                Navigator.pushNamed(
+                                  context,
+                                  'recipe_detail',
+                                  arguments: receta,
+                                );
+                              },
+                              child: Card(
+                                color: tarjeta,
+                                shape: RoundedRectangleBorder(
+                                  borderRadius: BorderRadius.circular(16),
+                                ),
+                                elevation: 4,
+                                child: Padding(
+                                  padding: const EdgeInsets.only(bottom: 4),
+                                  child: Column(
+                                    crossAxisAlignment:
+                                        CrossAxisAlignment.start,
+                                    children: [
+                                      ClipRRect(
+                                        borderRadius:
+                                            const BorderRadius.vertical(
+                                              top: Radius.circular(16),
+                                            ),
+                                        child: Image.network(
+                                          receta['imagen'],
+                                          height: 120,
+                                          width: double.infinity,
+                                          fit: BoxFit.cover,
+                                        ),
                                       ),
-                                      maxLines: 2,
-                                      overflow: TextOverflow.ellipsis,
-                                    ),
-                                  ),
-                                  Padding(
-                                    padding: const EdgeInsets.symmetric(
-                                      horizontal: 8.0,
-                                    ),
-                                    child: Row(
-                                      mainAxisAlignment:
-                                          MainAxisAlignment.spaceBetween,
-                                      children: [
-                                        Text(
-                                          '${receta['tiempoPreparacion']} min',
+                                      Padding(
+                                        padding: const EdgeInsets.all(8.0),
+                                        child: Text(
+                                          receta['nombre'],
                                           style: TextStyle(
-                                            color: acento,
-                                            fontSize: 12,
+                                            color: texto,
+                                            fontWeight: FontWeight.bold,
                                           ),
+                                          maxLines: 2,
+                                          overflow: TextOverflow.ellipsis,
                                         ),
-                                        Icon(
-                                          Icons.bookmark_border,
-                                          color: texto,
+                                      ),
+                                      Padding(
+                                        padding: const EdgeInsets.symmetric(
+                                          horizontal: 8.0,
                                         ),
-                                      ],
-                                    ),
+                                        child: Column(
+                                          crossAxisAlignment:
+                                              CrossAxisAlignment.start,
+                                          children: [
+                                            Row(
+                                              children: [
+                                                const Icon(
+                                                  Icons.star,
+                                                  size: 16,
+                                                  color: Colors.amber,
+                                                ),
+                                                const SizedBox(width: 4),
+                                                Text(
+                                                  '${receta['estrellas']}',
+                                                  style: TextStyle(
+                                                    color: texto,
+                                                    fontSize: 12,
+                                                  ),
+                                                ),
+                                              ],
+                                            ),
+                                            Row(
+                                              mainAxisAlignment:
+                                                  MainAxisAlignment
+                                                      .spaceBetween,
+                                              children: [
+                                                Row(
+                                                  children: [
+                                                    const Icon(
+                                                      Icons.group,
+                                                      size: 16,
+                                                      color: Colors.blueGrey,
+                                                    ),
+                                                    const SizedBox(width: 4),
+                                                    Text(
+                                                      '${receta['porciones']}',
+                                                      style: TextStyle(
+                                                        color: texto,
+                                                        fontSize: 12,
+                                                      ),
+                                                    ),
+                                                  ],
+                                                ),
+                                                Row(
+                                                  children: [
+                                                    const Icon(
+                                                      Icons.timer_outlined,
+                                                      size: 16,
+                                                    ),
+                                                    const SizedBox(width: 4),
+                                                    Text(
+                                                      '${receta['tiempoPreparacion']} min',
+                                                      style: TextStyle(
+                                                        color: texto,
+                                                        fontSize: 12,
+                                                      ),
+                                                    ),
+                                                  ],
+                                                ),
+                                              ],
+                                            ),
+                                            Row(
+                                              mainAxisAlignment:
+                                                  MainAxisAlignment.spaceEvenly,
+                                              children: [
+                                                IconButton(
+                                                  icon: Icon(
+                                                    isFav
+                                                        ? Icons.favorite
+                                                        : Icons.favorite_border,
+                                                    color: Colors.redAccent,
+                                                    size: 20,
+                                                  ),
+                                                  onPressed: () {
+                                                    final wasAdded = !isFav;
+                                                    favoritesProvider
+                                                        .toggleFavorite(receta);
+                                                    ScaffoldMessenger.of(
+                                                      context,
+                                                    ).showSnackBar(
+                                                      SnackBar(
+                                                        content: Text(
+                                                          wasAdded
+                                                              ? 'Added to favorites'
+                                                              : 'Removed from favorites',
+                                                          style:
+                                                              const TextStyle(
+                                                                color:
+                                                                    Colors
+                                                                        .white,
+                                                              ),
+                                                        ),
+                                                        backgroundColor:
+                                                            wasAdded
+                                                                ? Colors.green
+                                                                : Colors.red,
+                                                        duration:
+                                                            const Duration(
+                                                              seconds: 2,
+                                                            ),
+                                                        behavior:
+                                                            SnackBarBehavior
+                                                                .floating,
+                                                        shape: RoundedRectangleBorder(
+                                                          borderRadius:
+                                                              BorderRadius.circular(
+                                                                10,
+                                                              ),
+                                                        ),
+                                                        margin:
+                                                            const EdgeInsets.all(
+                                                              16,
+                                                            ),
+                                                      ),
+                                                    );
+                                                  },
+                                                ),
+                                                IconButton(
+                                                  icon: Icon(
+                                                    isInList
+                                                        ? Icons.shopping_cart
+                                                        : Icons
+                                                            .add_shopping_cart,
+                                                    color: const Color.fromARGB(
+                                                      255,
+                                                      0,
+                                                      0,
+                                                      0,
+                                                    ),
+                                                    size: 20,
+                                                  ),
+                                                  onPressed: () {
+                                                    final wasAdded = !isInList;
+                                                    if (wasAdded) {
+                                                      listProvider.addToList(
+                                                        receta,
+                                                      );
+                                                    } else {
+                                                      listProvider
+                                                          .removeFromList(
+                                                            receta,
+                                                          );
+                                                    }
+                                                    ScaffoldMessenger.of(
+                                                      context,
+                                                    ).showSnackBar(
+                                                      SnackBar(
+                                                        content: Text(
+                                                          wasAdded
+                                                              ? 'Added to shopping list'
+                                                              : 'Removed from shopping list',
+                                                          style:
+                                                              const TextStyle(
+                                                                color:
+                                                                    Colors
+                                                                        .white,
+                                                              ),
+                                                        ),
+                                                        backgroundColor:
+                                                            wasAdded
+                                                                ? Colors.green
+                                                                : Colors.red,
+                                                        duration:
+                                                            const Duration(
+                                                              seconds: 2,
+                                                            ),
+                                                        behavior:
+                                                            SnackBarBehavior
+                                                                .floating,
+                                                        shape: RoundedRectangleBorder(
+                                                          borderRadius:
+                                                              BorderRadius.circular(
+                                                                10,
+                                                              ),
+                                                        ),
+                                                        margin:
+                                                            const EdgeInsets.all(
+                                                              16,
+                                                            ),
+                                                      ),
+                                                    );
+                                                  },
+                                                ),
+                                              ],
+                                            ),
+                                          ],
+                                        ),
+                                      ),
+                                    ],
                                   ),
-                                ],
+                                ),
                               ),
                             ),
                           ),
@@ -219,7 +423,10 @@ class _HomePageState extends State<HomePage> {
         onTap: onItemTapped,
         items: const [
           BottomNavigationBarItem(icon: Icon(Icons.home), label: 'Home'),
-          BottomNavigationBarItem(icon: Icon(Icons.book), label: 'Recipes'),
+          BottomNavigationBarItem(
+            icon: Icon(Icons.favorite),
+            label: 'Favorites',
+          ),
           BottomNavigationBarItem(
             icon: Icon(Icons.add_circle, size: 32),
             label: '',
@@ -234,4 +441,3 @@ class _HomePageState extends State<HomePage> {
     );
   }
 }
-
