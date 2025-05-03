@@ -1,0 +1,8 @@
+{
+    "usuario": {
+        "nombre": "Juan Perez",
+        "foto": "https://th.bing.com/th/id/R.9dc28bf35cb0dd525c65992f2df7495d?rik=ELFTP9xcMq73PQ&pid=ImgRaw&r=0",
+        "telefono": "123-456-7890",
+        "email": "juan.perez@example.com"
+    }
+}

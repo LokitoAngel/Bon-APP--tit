@@ -36,7 +36,7 @@ class _HomePageState extends State<HomePage> {
         Navigator.pushNamed(context, 'list');
         break;
       case 4:
-        Navigator.pushNamed(context, 'user');
+        Navigator.pushNamed(context, 'perfil');
         break;
     }
   }

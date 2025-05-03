@@ -42,7 +42,7 @@ class MyApp extends StatelessWidget {
         'recipes': (context) => const RecipesPage(),
         'add': (context) => const AddRecipePage(),
         'lista': (context) => const ListPage(),
-        'perfil': (context) => const UserPage(),
+        'perfil': (context) => UserPage(),
         'search': (context) => const SearchMain(),
       },
     );
