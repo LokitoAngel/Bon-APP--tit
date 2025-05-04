@@ -26,7 +26,6 @@ class _UserPageState extends State<UserPage> {
 
   Future<void> _loadUserData() async {
     try {
-      // Cargar el archivo JSON
       final String jsonString = await rootBundle.loadString(
         'assets/Users.json',
       );
@@ -51,8 +50,18 @@ class _UserPageState extends State<UserPage> {
 
   @override
   Widget build(BuildContext context) {
+    final fondo = Theme.of(context).scaffoldBackgroundColor;
+    final texto = Theme.of(context).textTheme.bodyMedium?.color ?? Colors.black;
+    final primario = Theme.of(context).colorScheme.primary;
+
     return Scaffold(
-      appBar: AppBar(title: const Text('Profile')),
+      backgroundColor: fondo,
+      appBar: AppBar(
+        title: const Text('Profile'),
+        centerTitle: true,
+        automaticallyImplyLeading: false,
+        backgroundColor: primario,
+      ),
       body:
           isLoading
               ? const Center(
@@ -117,38 +126,50 @@ class _UserPageState extends State<UserPage> {
                       ],
                     ),
                   ),
-
                   const Secundarias(ruta: "perfil", texto: "Permissions"),
                   const Secundarias(ruta: "perfil", texto: "Settings"),
                   const Secundarias(ruta: "perfil", texto: "Term of services"),
                 ],
               ),
-    );
-  }
-
-  Widget _buildUserInfoCard(IconData icon, String title, String value) {
-    return Container(
-      width: double.infinity,
-      decoration: BoxDecoration(
-        borderRadius: BorderRadius.circular(10),
-        color: Colors.white70,
-      ),
-      margin: const EdgeInsets.only(bottom: 10, left: 15, right: 15),
-      padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 15),
-      child: Row(
-        children: [
-          Icon(icon, size: 25, color: Colors.deepOrangeAccent),
-          const SizedBox(width: 15),
-          Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              Text(
-                title,
-                style: TextStyle(fontSize: 14, color: Colors.grey[600]),
-              ),
-              Text(value, style: const TextStyle(fontSize: 16)),
-            ],
+      bottomNavigationBar: BottomNavigationBar(
+        currentIndex: 4,
+        backgroundColor: fondo,
+        selectedItemColor: primario,
+        unselectedItemColor: texto.withOpacity(0.6),
+        type: BottomNavigationBarType.fixed,
+        onTap: (index) {
+          switch (index) {
+            case 0:
+              Navigator.pushReplacementNamed(context, 'home_page');
+              break;
+            case 1:
+              Navigator.pushReplacementNamed(context, 'favorite_page');
+              break;
+            case 2:
+              Navigator.pushReplacementNamed(context, 'add');
+              break;
+            case 3:
+              Navigator.pushReplacementNamed(context, 'lista');
+              break;
+            case 4:
+              break;
+          }
+        },
+        items: const [
+          BottomNavigationBarItem(icon: Icon(Icons.home), label: 'Home'),
+          BottomNavigationBarItem(
+            icon: Icon(Icons.favorite),
+            label: 'Favorites',
           ),
+          BottomNavigationBarItem(
+            icon: Icon(Icons.add_circle, size: 32),
+            label: '',
+          ),
+          BottomNavigationBarItem(
+            icon: Icon(Icons.shopping_cart),
+            label: 'List',
+          ),
+          BottomNavigationBarItem(icon: Icon(Icons.person), label: 'User'),
         ],
       ),
     );
